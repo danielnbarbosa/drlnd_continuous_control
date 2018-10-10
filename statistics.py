@@ -23,6 +23,7 @@ class Stats():
         self.total_steps = 0                     # track cumulative steps taken
 
     def update(self, steps, rewards, i_episode):
+        """Update stats after each episode."""
         self.total_steps += steps
         self.score = sum(rewards)
         self.scores_window.append(self.score)
@@ -35,15 +36,18 @@ class Stats():
             self.best_avg_score = self.avg_score
 
     def is_solved(self, i_episode, solve_score):
+        """Define solve criteria."""
         return self.avg_score >= solve_score and i_episode >= 100
 
-    def print_episode(self, i_episode, alpha, buffer_len, steps, per_agent_rewards):
+    def print_episode(self, i_episode, alpha, buffer_len, steps):
+        """Output stats on each episode."""
         print('\rEpisode {:5}   Avg: {:8.2f}   BestAvg: {:8.2f}   σ: {:8.2f}'
               '   |   ⍺: {:6.4f}  Buffer: {:6}   Reward: {:8.2f}   Steps: {:6}'
               .format(i_episode, self.avg_score, self.best_avg_score, self.std_dev,
                       alpha, buffer_len, self.score, steps))
 
     def print_epoch(self, i_episode, alpha, buffer_len):
+        """Output stats on each epoch (100 episodes)."""
         n_secs = int(time.time() - self.time_start)
         print('\rEpisode {:5}   Avg: {:8.2f}   BestAvg: {:8.2f}   σ: {:8.2f}'
               '   |   ⍺: {:6.4f}  Buffer: {:6}'
@@ -53,10 +57,12 @@ class Stats():
                       self.total_steps, n_secs))
 
     def print_solve(self, i_episode, alpha, buffer_len):
+        """Output stats on solve."""
         self.print_epoch(i_episode, alpha, buffer_len)
         print('\nSolved in {:d} episodes!'.format(i_episode-100))
 
     def plot(self, loss_list):
+        """Plot stats in nice graphs."""
         window_size = len(loss_list) // 100 # window size is 1% of total steps
         plt.figure(1)
         # plot score

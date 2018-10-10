@@ -2,7 +2,7 @@
 UnityML Environment.
 """
 
-import numpy as np
+
 from unityagents import UnityEnvironment
 
 class UnityMLVectorMultiAgent():

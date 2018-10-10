@@ -101,10 +101,10 @@ class DDPG():
         if self.use_prioritized_experience_replay:
             priority = 100.0   # set initial priority to max value
             for i in range(self.n_agents):
-                self.memory.add(state[i,:], action[i,:], reward[i], next_state[i,:], done[i], priority[i,:])
+                self.memory.add(state[i, :], action[i, :], reward[i], next_state[i, :], done[i], priority[i, :])
         else:
             for i in range(self.n_agents):
-                self.memory.add(state[i,:], action[i,:], reward[i], next_state[i,:], done[i])
+                self.memory.add(state[i, :], action[i, :], reward[i], next_state[i, :], done[i])
 
         # Learn every update_every time steps.
         self.t_step = (self.t_step + 1) % self.update_every

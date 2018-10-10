@@ -43,14 +43,14 @@ def train(environment, agent, n_episodes=1000, max_t=1000,
 
         # every episode
         buffer_len = len(agent.memory)
-        per_agent_rewards = []
+        per_agent_rewards = []  # calculate per agent rewards
         for i in range(agent.n_agents):
-          per_agent_reward = 0
-          for step in rewards:
-            per_agent_reward += step[i]
-          per_agent_rewards.append(per_agent_reward)
+            per_agent_reward = 0
+            for step in rewards:
+                per_agent_reward += step[i]
+            per_agent_rewards.append(per_agent_reward)
         stats.update(t, [np.mean(per_agent_rewards)], i_episode)
-        stats.print_episode(i_episode, agent.alpha, buffer_len, t, per_agent_rewards)
+        stats.print_episode(i_episode, agent.alpha, buffer_len, t)
 
         # every epoch (100 episodes)
         if i_episode % 100 == 0:
