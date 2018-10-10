@@ -34,9 +34,12 @@ Using the supplied hyperparameters the agent is able to solve the environments i
 ![results](assets/results.png)
 
 
-
-
 ## Ideas for Future Work
 Other enhancements that I did not have time to explore but may yield promising results:
   - Add noise to the policy parameters.  There is [evidence](https://blog.openai.com/better-exploration-with-parameter-noise/) that this can boost performance.
   - Use the [PPO](https://arxiv.org/abs/1707.06347) algorithm.  A policy gradient method that is also very effective, though it would have to be adapted for continuous action spaces.
+  - A thorough hyperparameter grid search.  Time and money constraints prevented an exhaustive hyperparameter search.
+
+
+## Other considerations
+It's also worth noting that it is fairly easy to reduce the number of episodes to solve the environment by increasing the `batch_size` or decreasing the `update_every` (number of steps that pass before doing a gradient update).  But this results in an increased wall time.  I would argue that wall time is a better metric then number of episodes or number of steps when evaluating the agent's performance.  Of course this muddles comparisons across different hardware but should be fine for comparisons on the same hardware.
