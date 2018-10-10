@@ -1,5 +1,6 @@
 ## Trained Agent
-Here's what the agent looks like after training:
+Here's what the agent looks like after training.  You can see that the robotic arms are able to track the rotation of the spheres.
+
 ![trained_agent](assets/trained_agent.gif)
 
 
@@ -22,6 +23,9 @@ A few changes were made all of which were found to speed up training:
   - L2 weight_decay of the critic set to 0.0001 vs 0.01 in the paper.
   - Batch size of 128 vs 64.
   - Update gradients every 2 steps vs every step.
+
+#### Key improvement
+The best improvement however came from using a normal distribution (`np.random.randn`) when adding randomness to the Ornstein-Uhlenbeck process.  The code provided for the Ornstein-Uhlenbeck process used a uniform distribution (`random.random()`) and had much worse performance.  A normal distribution is consistent with other [implementations](https://github.com/openai/baselines/blob/10c205c1596dd58d1a9b33d423fb75228fe03953/baselines/ddpg/noise.py) and [references](https://math.stackexchange.com/questions/1287634/implementing-ornstein-uhlenbeck-in-matlab).
 
 
 ## Plot of Rewards
