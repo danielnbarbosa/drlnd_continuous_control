@@ -38,6 +38,7 @@ Using the supplied hyperparameters the agent is able to solve the environments i
 Other enhancements that I did not have time to explore but may yield promising results:
   - Add noise to the policy parameters.  There is [evidence](https://blog.openai.com/better-exploration-with-parameter-noise/) that this can boost performance.
   - Use the [PPO](https://arxiv.org/abs/1707.06347) algorithm.  A policy gradient method that is also very effective, though it would have to be adapted for continuous action spaces.
+  - Use prioritized experience replay.  The current implementation of PER is not efficient enough to use with large buffer sizes, it needs to be reworked, but could be another way to solve the environment in fewer episodes.
   - A thorough hyperparameter grid search.  Time and money constraints prevented an exhaustive hyperparameter search.
 
 

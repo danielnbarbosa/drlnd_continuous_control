@@ -43,8 +43,8 @@ Create an anaconda environment that contains all the required dependencies to ru
 
 Mac:
 ```
-conda create --name continuous_control python=3.6
-source activate continuous_control
+conda create --name drlnd_continuous_control python=3.6
+source activate drlnd_continuous_control
 conda install -y python.app
 conda install -y pytorch -c pytorch
 pip install torchsummary unityagents
@@ -52,8 +52,8 @@ pip install torchsummary unityagents
 
 Windows:
 ```
-conda create --name continuous_control python=3.6
-activate continuous_control
+conda create --name drlnd_continuous_control python=3.6
+activate drlnd_continuous_control
 conda install -y pytorch -c pytorch
 pip install torchsummary unityagents
 ```
