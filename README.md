@@ -25,7 +25,7 @@ The agents must get an average score of +30 (over 100 consecutive episodes, and 
 
 
 Here's an example of a single observation of the environment:
-![reacher](reacher.png)
+![reacher](assets/reacher_environment.png)
 
 
 ## Installation
