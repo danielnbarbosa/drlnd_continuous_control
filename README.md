@@ -70,9 +70,9 @@ Download the file into the top level directory of this repo and unzip it.
 
 
 ## Train your agent
-To train the agent run `learn.py`.  This will fire up the Unity environment and output live training statistics to the command line.  When training is finished you'll have a saved model in the `checkpoints` directory and see some graphs that help visualize the agent's learning progress.  IF you haven't modified any of the hyperparameters it should take the agent 132 episodes to solve the environment.
+To train the agent run `learn.py`.  This will fire up the Unity environment and output live training statistics to the command line.  When training is finished you'll have a saved model in the `checkpoints` directory and see some graphs that help visualize the agent's learning progress.  If you haven't modified any of the hyperparameters it should take the agent 132 episodes to solve the environment.
 
-To load a saved model run `learn.py --load=<path to files>`.  This will load the saved weights from a checkpoint file.  A previously trained model is included in this repo.  To load this model run `./learn.py --load=checkpoints/saved/reacher`.  Note that the underlying files are named `reacher.actor.pth` and `reacher.actor.pth` but you need only pass the common part of the file name, hence `reacher`.
+To load a saved model run `learn.py --load=<path to files>`.  This will load the saved weights from a checkpoint file.  A previously trained model is included in this repo.  To load this model run `./learn.py --load=checkpoints/saved/reacher`.  Note that the underlying files are named 'reacher.actor.pth' and 'reacher.actor.pth' but you need only pass the common part of the file name, e.g. 'reacher'.
 
 Note, Windows users will need to execute `python learn.py` instead of just `learn.py`.  This is due to matplotlib requiring a framework build of python on MacOS which is installed as pythonw and is hardcoded in the script.  More details [here](https://matplotlib.org/faq/osx_framework.html).
 
