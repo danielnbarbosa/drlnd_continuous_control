@@ -79,4 +79,4 @@ Note, Windows users will need to execute `python learn.py` instead of just `lear
 Feel to experiment with modifying the hyperparameters to see how it affects training.
 
 ## Report
-See the [report](Report.md) for more insight on how I arrived at the current hyperparameters.  
+See the [report](Report.md) for more details on the implementation.

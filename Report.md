@@ -1,6 +1,6 @@
 ## Trained Agent
 Here's what the agent looks like after training:
-![trained_agent](assets/trained_agent.png)
+![trained_agent](assets/trained_agent.gif)
 
 
 ## Learning Algorithm
@@ -9,8 +9,9 @@ The algorithm chosen to solve this environment is Deep Deterministic Policy Grad
  2. It uses an actor-critic model, using value based methods to reduce the variance of policy based methods.
  3. It is easily parallelized, further reducing variance and speeding up training.
 
+#### Hyperparameters
 The chosen hyperparameters closely follow those from the original [DDPG paper](https://arxiv.org/abs/1509.02971).  This includes:
-  - Two layer networks for both actor and critic models.  The first hidden layer with 400 units and the second with 300.
+  - Two layer networks, 400 hidden units in the first, 300 in the second, for both actor and critic models.
   - Relu activation for all non linear activation functions.
   - Actions added in second layer of the critic.
   - Adam optimizer with learning rates of 1e-4 for the actor and 1e-3 for the critic.
@@ -24,13 +25,14 @@ A few changes were made all of which were found to speed up training:
 
 
 ## Plot of Rewards
-Using the supplied hyperparameters the agent is able to solve the environments in 32 episodes:
+Using the supplied hyperparameters the agent is able to solve the environments in 32 episodes.  There are also [detailed training results](assets/training_output.txt) if you are curious.
+
 ![results](assets/results.png)
 
-[Detailed training results](assets/training_output.txt) if you are curious.
+
 
 
 ## Ideas for Future Work
 Other enhancements that I did not have time to explore but may yield promising results:
   - Add noise to the policy parameters.  There is [evidence](https://blog.openai.com/better-exploration-with-parameter-noise/) that this can boost performance.
-  - Use the PPO algorithm.  A policy gradient method that is also very effective, though it would have to be adapted for continuous action spaces.
+  - Use the [PPO](https://arxiv.org/abs/1707.06347) algorithm.  A policy gradient method that is also very effective, though it would have to be adapted for continuous action spaces.
