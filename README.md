@@ -24,7 +24,7 @@ A reward from +0.01 to +0.04 is provided for each step that the agent's hand is 
 The agents must get an average score of +30 (over 100 consecutive episodes, and over all agents).  The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30.
 
 
-Here's an example of a single observation of the environment.  It looks kind of chaotic but essentially there are twenty arms trying to track 20 target spheres.
+Here's an example of a single observation of the environment:
 ![reacher](reacher.png)
 
 
@@ -59,7 +59,7 @@ pip install torchsummary unityagents
 ```
 
 #### Step 3: Download Reacher environment
-You will also need to install the pre-built Unity environment, you will NOT need to install Unity itself.  Select the appropriate file for your operating system:
+Install the pre-compiled Unity environment.  Select the appropriate file for your operating system:
 
 - Linux: click [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
 - Mac OSX: click [here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
