@@ -7,14 +7,11 @@ This project uses Deep Deterministic Policy Gradient (DDPG) to train a robotic a
 ## Environment Description
 In this environment, we are training a double-jointed arm to move to a target location.  To speed up training we will be training 20 robotic arms simultaneously.  Each robotic arm is circled by a target sphere and the goal of the agent is to maintain its position at the target location for as many time steps as possible.
 
-
 #### Observation Space
 The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm.
 
-
 #### Action Space
 The action space is continuous and each action is a vector with four numbers, corresponding to torque applicable to two joints.  Every entry in the action vector is a number between -1 and 1.
-
 
 #### Reward Structure
 A reward from +0.01 to +0.04 is provided for each step that the agent's hand is in the goal location.  A higher reward is provided if the agent's hand is closer to the center of the target.
@@ -23,22 +20,15 @@ A reward from +0.01 to +0.04 is provided for each step that the agent's hand is 
 The agents must get an average score of +30 (over 100 consecutive episodes, and over all agents).  The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30.
 
 
-Here's an example of a single observation of the environment:
-![reacher](assets/reacher_environment.png)
-
-
 ## Installation
-
-#### Pre-requisites
-- Make sure you having a working version of [Anaconda](https://www.anaconda.com/download/) on your system.
-
 
 #### Step 1: Clone the repo
 Clone this repo using `git clone https://github.com/danielnbarbosa/drlnd_continuous_control.git`.
 
 
 #### Step 2: Install Dependencies
-Create an anaconda environment that contains all the required dependencies to run the project.
+Create an [anaconda](https://www.anaconda.com/download/) environment that contains all the required dependencies to run the project.
+
 
 Mac:
 ```
