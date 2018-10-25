@@ -1,9 +1,3 @@
-## Trained Agent
-Here's what the agent looks like after training.  You can see that the robotic arms are able to track the rotation of the spheres.
-
-![trained_agent](assets/trained_agent.gif)
-
-
 ## Learning Algorithm
 The algorithm chosen to solve this environment is Deep Deterministic Policy Gradient (DDPG).  DDPG can be seen as an extension of DQN, with three important enhancements:
  1. It works with continuous action spaces, key for solving robotic control problems.
